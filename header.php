@@ -19,3 +19,6 @@
 <body id="page-top" <?php body_class(); ?> >
   <?php 
   wp_body_open(); ?>
+
+  <?php 
+  get_template_part( 'parts/header', 'menu' ); ?>

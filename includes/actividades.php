@@ -1,5 +1,74 @@
 <?php 
 
+add_action('oml_section_actividades', 'oml_section_actividades');
+function oml_section_actividades(){ ?>
+
+  <section class="page-section portfolio bg-primary " id="actividades">
+  <div class="container">
+
+    <!-- Actividades Section Heading -->
+    <h2 class="page-section-heading text-center text-uppercase text-white mb-0"><?php _e('Actividades', 'jueganess'); ?></h2>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom divider-light">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon">
+        <i class="fas fa-dice"></i>
+      </div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+
+    <!-- Actividades Grid Items -->
+    <div class="row">
+    <?php
+    $args = array('category_name' => 'actividades',
+                  'post_type' => 'post', 
+                  'posts_per_page' => 6,  );
+
+    $qryact = new WP_Query( $args );
+
+    if ($qryact->have_posts()) : 
+      while ($qryact->have_posts()):
+        $qryact->the_post(); ?>
+        <div class="col-md-6 col-lg-4">
+
+          <style>
+            a.x {
+    color: #333; /* Color del texto normal */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* Transición para un cambio suave de color y resplandor */
+}
+
+/* Estilo al pasar el ratón sobre el enlace */
+a.x:hover {
+    color: #007bff; /* Cambia el color del texto al pasar el ratón */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.8); /* Añade un resplandor azul al pasar el ratón */
+}
+</style>
+          <a class="x" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">                                  
+              <?php               
+              if (has_post_thumbnail()){            
+                the_post_thumbnail('[150, 150]', ['class' => 'img-fluid', 'loading'=>'lazy' ] );    
+              } ?>                        
+              
+          </a>
+                        
+          
+        </div>
+      <?php
+      endwhile; 
+
+    endif;?>
+    </div>
+
+  </div>
+
+</section>
+
+<?php 
+}
+
 
 function mostrar_actividades(){
 
