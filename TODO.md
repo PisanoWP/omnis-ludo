@@ -13,7 +13,7 @@
 - [] Panel inicio 
 
 # TEMPLATE JUEGANESS
-- [] Imagen por defecto para actividad sin imagen destacada
+- [x] Imagen por defecto para actividad sin imagen destacada
 
 # PAGINAS LEGALES
 - [] Aviso legal
@@ -28,16 +28,19 @@
 - Estilo responsive
 
 # LISTA ENTRADAS archive.php
-- Estilo
+- [X] Estilo
 - Cabeceras variables en función de página
 - Estilo responsivle
-- Paginación
+- [X] Paginación
 
 # 404
 - Crear página 404
 
 # footer.php
 - widget de rrss
+
+# Usuarios
+- Página personalizada area privada
 
 # THEM FSE
 - Convertir el tema clásico en un tema de bloques

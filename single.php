@@ -28,12 +28,15 @@ get_header(); ?>
             the_content(); ?>    
           </div>
         
-          <div class="col-lg-6 ml-auto">
-            <?php 
+          <div class="col-lg-6 ml-auto text-center">
+            <?php
             $image_title = 'Imagen destadada para '. get_the_title();
-            if (has_post_thumbnail()){            
-              the_post_thumbnail('[150, 150]', ['class' => 'img-fluid', 'loading'=>'lazy', 'title' => esc_attr($image_title) ] );    
-            } ?>                        
+            if (has_post_thumbnail()){   
+              the_post_thumbnail( '[150, 150]', ['class' => 'img-fluid', 'title' => esc_attr($image_title) ] );
+            } else { ?>
+              <img class="mastheadavatar mb-5 mx-auto" style="width:50%; height:auto;" src="<?php echo JGN_THEME_URL.'/img/logo-jueganess-marco-blanco.png';?>" alt="Logo Jueganess" >
+            <?php
+            } ?>                     
           </div>          
         </section>
 

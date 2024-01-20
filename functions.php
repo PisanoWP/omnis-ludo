@@ -22,6 +22,9 @@ function omlwp_setup(){
 	add_theme_support( "title-tag" ) ;
 	add_theme_support( "post-thumbnails" );
 
+	// Añadimos un nuevo tamaño
+	add_image_size( 'thumbnail-16-9', 265, 150, array( 'center', 'center' ) );
+
 	// Add RSS Support
 	add_theme_support( 'automatic-feed-links' );
 
@@ -204,3 +207,54 @@ function omlwp_register_sidebars() {
 
 // adding sidebars to Wordpress
 add_action( 'widgets_init', 'omlwp_register_sidebars' );
+
+
+
+
+
+
+
+
+
+if ( ! function_exists( 'twenty_twenty_one_post_thumbnail' ) ) {
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 *
+	 * @since Twenty Twenty-One 1.0
+	 *
+	 * @return void
+	 */
+	function twenty_twenty_one_post_thumbnail() {
+		
+		?>
+
+		<?php if ( is_singular() ) : ?>
+
+			<figure class="post-thumbnail">
+				<?php
+				// Lazy-loading attributes should be skipped for thumbnails since they are immediately in the viewport.
+				the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
+				?>
+				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+				<?php endif; ?>
+			</figure><!-- .post-thumbnail -->
+
+		<?php else : ?>
+
+			<figure class="post-thumbnail">
+				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
+				</a>
+				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+				<?php endif; ?>
+			</figure><!-- .post-thumbnail -->
+
+		<?php endif; ?>
+		<?php
+	}
+}

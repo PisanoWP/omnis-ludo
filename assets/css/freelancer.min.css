@@ -32,3 +32,16 @@
 @media (min-width: 1200px) { 
   .card-xl-width{  max-width: 50%; }  
 }
+
+.omlwp-archive-article{
+  display : flex;
+
+}
+.archive-article-imagen { 
+  width : 80%;
+
+}
+.archive-article-imagen img {
+  width : 80%;
+  height : auto;
+}
