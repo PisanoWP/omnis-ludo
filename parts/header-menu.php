@@ -10,10 +10,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <?php
         if ( is_front_page() ) {
-          fdf_header_menu_principal_home(); 
+          omlwp_header_menu_principal_home(); 
 
         } else {          
-          fdf_header_menu_principal(); 
+          omlwp_header_menu_principal(); 
 
         } ?>
       </div>

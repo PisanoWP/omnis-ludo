@@ -9912,3 +9912,21 @@ form .row:first-child .floating-label-form-group {
   width : 80%;
   height : auto;
 }
+
+
+.section-404 {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+
+.section-404 .title-404 {
+  font-size: 120px;
+  font-weight: 800;
+  font-family: 'Open Sans', arial, sans-serif;
+  color: #65758e;
+}
+
+.section-404 .intro {
+  font-size: 24px;
+  margin-bottom: 30px;
+}

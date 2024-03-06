@@ -7,6 +7,10 @@ Conversión de la web estática jueganes.org a un tema Wordpress
 
 ## VERSIONES
 
+v0.3.0
+- feat: Menú pie de página
+- feat: Añadir categorias en single.php archive.php
+- feat: página 404 
 
 v0.2.0
 - feat: Paginación

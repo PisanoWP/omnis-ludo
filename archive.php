@@ -22,7 +22,7 @@ $description = get_the_archive_description();
      
     <article id="post-<?php the_ID(); ?>"  <?php post_class( array('omlwp-archive-article', 'w-75', 'mt-5', 'mx-auto')); ?> >
 
-      <div class="archive-article-imagen">
+      <div class="archive-article-imagen d-none d-sm-none d-md-block ">
         <?php
         $image_title = 'Imagen destadada para '. get_the_title();
         if (has_post_thumbnail()){   
@@ -45,9 +45,11 @@ $description = get_the_archive_description();
           <?php 
           the_excerpt(); ?>
         </div><!-- .entry-content -->
-        
+
         <div class="archive-article-terms entry-footer ">
-          <?php 
+          <?php           
+          the_terms( $post->ID, 'category', __('Categorías: ', 'jueganess'), ' / ' ); 
+          echo '<br>';          
           the_terms( $post->ID, 'post_tag', 'Etiquetas: ', ' / ' ); ?>
         </div>
 
