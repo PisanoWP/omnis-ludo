@@ -23,7 +23,19 @@ get_header(); ?>
         </header>
                         
         <section class="row">
+  
           <div class="col-lg-6 ml-auto">          
+            
+            <?php 
+            $categories = get_the_category();
+
+            // Comprobamos si hay categorías
+            if ($categories) {
+              echo '<div class="mb-3">';
+              the_terms( $post->ID, 'category', __('Categorías: ', 'jueganess'), ' / ' ); 
+              echo '</div>';
+            } ?>
+
             <?php
             the_content(); ?>    
           </div>
@@ -40,9 +52,12 @@ get_header(); ?>
           </div>          
         </section>
 
-        <footer class="pl-2">
-          <?php 
-          the_terms( $post->ID, 'post_tag', 'Etiquetas: ', ' / ' ); ?>
+        <footer class="pl-2 ">          
+          <div>
+            <?php 
+            the_terms( $post->ID, 'post_tag', __('Etiquetas: ', 'jueganess'), ' / ' );  ?>
+          </div>
+
         </footer>
       
       </article>

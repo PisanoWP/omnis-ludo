@@ -135,13 +135,14 @@ class OWLWP_Menu_Walker extends Walker_Nav_Menu {
 register_nav_menus(
 	array(
 		'owlwp-header-menu-home' => __( 'Menú principal Home', 'jueganess' ),  // Menú principal en home
-		'owlwp-header-menu' => __( 'Menú principal resto páginas', 'jueganess' )			 // Menú principal resto páginas
+		'owlwp-header-menu' => __( 'Menú principal resto páginas', 'jueganess' ),			 // Menú principal resto páginas
+		'owlwp-footer-menu' => __( 'Menú pie', 'jueganess' )			 // Menú pie para páginas legales
 
 	)
 );
 
 // Menú  principal en la página home
-function fdf_header_menu_principal_home() {
+function omlwp_header_menu_principal_home() {
 	wp_nav_menu( array('theme_location' => 'owlwp-header-menu-home',  // Where it's located in the theme
 										 'container'      => 'ul',
 										 'menu_class'     => 'navbar-nav ml-auto',
@@ -152,7 +153,7 @@ function fdf_header_menu_principal_home() {
 }
 
 // Menú  principal resto pagínas
-function fdf_header_menu_principal() {
+function omlwp_header_menu_principal() {
 	wp_nav_menu( array('theme_location' => 'owlwp-header-menu',  // Where it's located in the theme
 										 'container'      => 'ul',
 										 'menu_class'     => 'navbar-nav ml-auto',
@@ -161,6 +162,17 @@ function fdf_header_menu_principal() {
 									 )
 							);
 
+}
+
+// Menú pie
+function omlwp_footer_menu_principal(){	
+	wp_nav_menu( array('theme_location' => 'owlwp-footer-menu',  // Where it's located in the theme
+										 'container'      => 'ul',
+										 'menu_class'     => 'navbar-nav ml-auto',
+										 'walker' 				=> new OWLWP_Menu_Walker(),
+										 'fallback_cb'		=> false
+									 )
+							);
 }
 
 

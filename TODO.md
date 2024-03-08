@@ -3,13 +3,13 @@
 - [] Crear json dependencias del proyecto ( bootstrapt fontawesome )
 - [X] Optimizar imagen screenshot
 - [X] Pie de paginas nombrando el tema original
-- [] Encolar estilos y scripts ( Eliminar jquery )
+- [X] Encolar estilos y scripts ( Eliminar jquery )
 - [] Convertir index en template-home
 - [] Crear index.php estandar
 - [] Crear page.php estandar
 - [] Literales preparados para traducción
 - [] Etiquetas de accesibilidad
-- [] Añadir boton flotante subir para arriba
+- [X] Añadir boton flotante subir para arriba
 - [] Panel inicio 
 
 # TEMPLATE JUEGANESS
@@ -23,18 +23,18 @@
 
 # ENTRADAS single.php
 - Estilo contenido
-- Ubicar categorias
-- Ubicar etiqeutas
-- Estilo responsive
+- [X] Ubicar categorias
+- [X] Ubicar etiqeutas
+- [X] Estilo responsive
 
 # LISTA ENTRADAS archive.php
 - [X] Estilo
 - Cabeceras variables en función de página
-- Estilo responsivle
+- [X] Estilo responsivle
 - [X] Paginación
 
 # 404
-- Crear página 404
+- [X] Crear página 404
 
 # footer.php
 - widget de rrss

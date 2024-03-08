@@ -17,35 +17,35 @@
 					dynamic_sidebar( 'omlwp_footer_2_3' ); ?>
           
           <div class="text-justify">
-          
-          <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://telegram.me/comunidadjueganess" target="_blank">
-            <i class="fa-brands fa-telegram"></i>
-          </a>
-          @comunidadjueganess
-          <br>
+                
+            <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://t.me/+KkXzBgMjcFphMmIy" target="_blank">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            @comunidadjueganess
+            <br>
 
-          <a class="btn btn-outline-light btn-social mx-1  mb-1" href="mailto:info@jueganess.org" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-          info@jueganess.org
-          <br>
+            <a class="btn btn-outline-light btn-social mx-1  mb-1" href="mailto:info@jueganess.org" target="_blank">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            info@jueganess.org
+            <br>
 
-          <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://www.instagram.com/jueganess" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          @jueganess
-          <br>
-          <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://twitter.com/AJueganess" target="_blank">
-            <i class="fab fa-fw fa-twitter"></i>
-          </a>
-          @ajueganess
-          <br>
+            <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://www.instagram.com/jueganess" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            @jueganess
+            <br>
+            <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://twitter.com/AJueganess" target="_blank">
+              <i class="fab fa-fw fa-twitter"></i>
+            </a>
+            @ajueganess
+            <br>
 
-          <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://discord.gg/bRGvxYTsTE" target="_blank">
-            <i class="fa-brands fa-discord"></i>
-          </a>
-          @Jueganess
-          <br>          
+            <a class="btn btn-outline-light btn-social mx-1  mb-1" href="https://discord.gg/bRGvxYTsTE" target="_blank">
+              <i class="fa-brands fa-discord"></i>
+            </a>
+            @Jueganess
+            <br>          
           
           </div>
         </div>
@@ -62,6 +62,12 @@
       </div>
     </div>
   </footer>
+
+  <section class="copyright py-4 text-center text-white">
+    <?php
+    omlwp_footer_menu_principal(); ?> 
+  </section>
+  
 
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
@@ -80,13 +86,13 @@
     </div>
 
     <div class="container">
-      <small>Copyright &copy; Jueganess 2022</small>
+      <small>Copyright &copy; Jueganess <?php echo date('Y');?></small>
     </div>
     
   </section>
 
   <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-  <div class="scroll-to-top d-lg-none position-fixed ">
+  <div class="scroll-to-top position-fixed ">
     <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
       <i class="fa fa-chevron-up"></i>
     </a>

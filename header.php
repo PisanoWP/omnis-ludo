@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <meta name="description" content="Asociación Cultural de Leganés para disfrute de juegeos de mesa y rol. ">
-  <meta name="keywords" content="Juegos de mesa en leganés, Juegos de rol en leganés, Juegos de cartas en Leganés, "" >
+  <meta name="keywords" content="Juegos de mesa en leganés, Juegos de rol en leganés, Juegos de cartas en Leganés," >
   <meta name="author" content="Jueganess">
   <link rel="icon" type="image/png" href="logo-jueganess-512.png">
     
