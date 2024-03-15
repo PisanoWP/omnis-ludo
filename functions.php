@@ -2,7 +2,7 @@
 
 define('OML_THEME_PATH', get_template_directory() );
 define('OML_THEME_URL', get_template_directory_uri() );
-define('OML_THEME_VERSION', '0.1.0' );
+define('OML_THEME_VERSION', '0.3.1' );
 
 define('JGN_THEME_URL', get_template_directory_uri() );
 
@@ -14,7 +14,7 @@ else:
 endif;
 
 
-require_once( OML_THEME_PATH . '\includes\jueganess.php' );
+require_once( OML_THEME_PATH . '/includes/jueganess.php' );
 
 
 function omlwp_setup(){
@@ -168,7 +168,7 @@ function omlwp_header_menu_principal() {
 function omlwp_footer_menu_principal(){	
 	wp_nav_menu( array('theme_location' => 'owlwp-footer-menu',  // Where it's located in the theme
 										 'container'      => 'ul',
-										 'menu_class'     => 'navbar-nav ml-auto',
+										 'menu_class'     => 'navbar-nav ml-auto d-flex flex-row justify-content-around',
 										 'walker' 				=> new OWLWP_Menu_Walker(),
 										 'fallback_cb'		=> false
 									 )
