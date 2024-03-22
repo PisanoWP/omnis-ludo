@@ -7,15 +7,37 @@ $description = get_the_archive_description();
 ?>
 
 <?php if ( have_posts() ) : ?>
-
 	<header class="masthead bg-primary text-white text-center" >
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-		<?php if ( $description ) : ?>
-			<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
-		<?php endif; ?>
+    <h1>
+      <?php
+      printf(					
+        esc_html__( 'Resultados para "%s"', 'jueganess' ),
+        '<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
+      ); ?>
+    </h1>
     <?php
     do_action('oml_show_separator', array('divider-light') ); ?>  
+
+  <div class="search-result-count default-max-width">
+      <?php
+      printf(
+        esc_html(
+          /* translators: %d: The number of search results. */
+          _n(
+            'Hemos encontrado %d resultado para tu búsqueda.',
+            'Hemos encontrado %d resultados para tu búsqueda.',
+            (int) $wp_query->found_posts,
+            'jueganess'
+          )
+        ),
+        (int) $wp_query->found_posts
+      );
+      ?>
+    </div><!-- .search-result-count -->
+    
 	</header><!-- .page-header -->
+
+  
 
 	<?php while ( have_posts() ) : ?>
 		<?php the_post(); ?>

@@ -19,6 +19,11 @@ function oml_section_actividades(){ ?>
     </div>
 
 
+    <?php 
+    get_search_form(); ?>
+    
+	
+
     <!-- Actividades Grid Items -->
     <div class="row">
     <?php

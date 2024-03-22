@@ -2,7 +2,7 @@
 
 define('OML_THEME_PATH', get_template_directory() );
 define('OML_THEME_URL', get_template_directory_uri() );
-define('OML_THEME_VERSION', '0.3.1' );
+define('OML_THEME_VERSION', '0.3.5' );
 
 define('JGN_THEME_URL', get_template_directory_uri() );
 

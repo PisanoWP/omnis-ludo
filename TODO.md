@@ -13,7 +13,7 @@
 - [] Panel inicio 
 - [] Crear shortcode separador
 - [] Añadir código UPDATER
-- [] Añadir código buscador
+- [X] Añadir código buscador
 
 # PAGINA PRINCIPAL
 - [] Tomar la imagen destacad que se ponga en la imgaen como imagen principal al lado del log
@@ -33,6 +33,7 @@
 - [X] Ubicar etiqeutas
 - [X] Estilo responsive
 - [ ] Añadir fecha de edición
+- [ ] Añadir opcion para mostrar la imagen destacada o no, y aproverchar todo el ancho
 
 # LISTA ENTRADAS archive.php
 - [X] Estilo
@@ -42,6 +43,8 @@
 
 # 404
 - [X] Crear página 404
+- [X] Añadir caja de buscador
+- [ ] Añadir enlace a últimas actividaes
 
 # footer.php
 - widget de rrss

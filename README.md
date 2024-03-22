@@ -7,6 +7,10 @@ Conversión de la web estática jueganes.org a un tema Wordpress
 
 ## VERSIONES
 
+v0.3.5
+- feat: search form
+- feat: información cuando no se recuperan datos
+
 v0.3.1
 - refact: Limpieza código
 - fix: Imagen destacada

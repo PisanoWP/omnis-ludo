@@ -7,7 +7,15 @@ get_header(); ?>
       <img class="masthead-avatar mb-5" src="<?php echo JGN_THEME_URL.'/assets/images/heroquest-nada.jpg';?>" alt="Imagen carta tesoro de Heroquest Nada" >
 			<p class="intro text-center"><?php _e('La página solicitada no existe', 'jueganess'); ?></p>
 		</div><!--//container-->
+		
+		<div class="p-1 bg-primary">
+		<?php 
+			get_search_form(); ?>
+		</div>
+
 	</section>
+
+
 
 <?php 
 get_footer(); ?>

@@ -1,57 +1,76 @@
 <?php 
 get_header(); ?>
 
-  <section class="page-section mb-0">
-    <div class="container">
-  <?php
-  if (have_posts()): ?>
-    <h2>Últimas entradas</h2>
+
+<?php
+$description = get_the_archive_description();
+?>
+
+<?php if ( have_posts() ) : ?>
+
+	<header class="masthead bg-primary text-white text-center" >
+		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+		<?php if ( $description ) : ?>
+			<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
+		<?php endif; ?>
+    <?php
+    do_action('oml_show_separator', array('divider-light') ); ?>  
+	</header><!-- .page-header -->
+
+	<?php while ( have_posts() ) : ?>
+		<?php the_post(); ?>
+     
+    <article id="post-<?php the_ID(); ?>"  <?php post_class( array('omlwp-archive-article', 'w-75', 'mt-5', 'mx-auto')); ?> >
+
+      <div class="archive-article-imagen d-none d-sm-none d-md-block ">
+        <?php
+        $image_title = 'Imagen destadada para '. get_the_title();
+        if (has_post_thumbnail()){   
+          the_post_thumbnail( 'thumbnail-16-9', ['class' => 'img-fluid', 'title' => esc_attr($image_title) ] );
+        } else { ?>
+          <img class="masthead-avatar mb-5" src="<?php echo JGN_THEME_URL.'/img/logo-jueganess-marco-blanco.png';?>" alt="Logo Jueganess" >
+        <?php
+        } ?>
+
+      </div>
+
+      <section class="d-flex flex-column justify-content-around">
+
+        <header class="entry-header">
+          <?php
+          the_title( sprintf( '<h2 class="entry-title default-max-width"><a href="%s">', esc_url( get_permalink() ) ), '</a></h2>' );  ?>
+        </header><!-- .entry-header -->
+
+        <div class="archive-article-content entry-content">
+          <?php 
+          the_excerpt(); ?>
+        </div><!-- .entry-content -->
+
+        <div class="archive-article-terms entry-footer ">
+          <?php           
+          the_terms( $post->ID, 'category', __('Categorías: ', 'jueganess'), ' / ' ); 
+          echo '<br>';          
+          the_terms( $post->ID, 'post_tag', 'Etiquetas: ', ' / ' ); ?>
+        </div>
+
+      </section>
+
+    </article><!-- #post-${ID} -->
 
     <?php 
-	  while (have_posts()): the_post();  ?>
-    <section class="inner-page">
-      
-      <div class="container">
-        <h3><a href="<?php the_permalink();?>" title="<?php echo esc_attr(get_the_title());?>"><?php the_title();?></a></h3>
-      </div>
-    
-      
-      <div class="container d-flex flex-column flex-md-row">                
-      
-        <?php
-          $image_title = 'Imagen destadada para '. get_the_title();
-          if (has_post_thumbnail()){            
-            the_post_thumbnail('[150, 150]', ['class' => 'img-thumbnail', 'loading'=>'lazy', 'title' => esc_attr($image_title) ] );    
-          } ?>            
-        </div>
-        
-        <div class="container">
-           <?php
-           the_content(); ?>            
-    
-        </div>
-        
-      </div>
-      <footer style="padding-left:12px;">
-        <?php the_terms( $post->ID, 'post_tag', 'Etiquetas: ', ' / ' ); ?>
-      </footer>
-      
-      
-    </section>
-      
+    do_action('oml_show_separator'); ?>  
 
-    <?php
-    endwhile;  
     
-    //pulwp_archive_navigation(); 
+	<?php endwhile; ?>
 
-  else:?>
-    <div> No se ha recuperado nada con este criterio</div>
+	<?php
+  omlwp_archive_navigation(); ?>
 
-  <?php 
-  endif; ?>
-    </div>
-  </section>
+<?php else: ?>
+	<?php 
+  get_template_part( 'parts/content','sindatos' ); ?>
+
+<?php endif; ?>
 
 
 <?php 
