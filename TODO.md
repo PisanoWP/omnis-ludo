@@ -11,14 +11,20 @@
 - [] Etiquetas de accesibilidad
 - [X] Añadir boton flotante subir para arriba
 - [] Panel inicio 
+- [] Crear shortcode separador
+- [] Añadir código UPDATER
+- [X] Añadir código buscador
+
+# PAGINA PRINCIPAL
+- [] Tomar la imagen destacad que se ponga en la imgaen como imagen principal al lado del log
 
 # TEMPLATE JUEGANESS
 - [x] Imagen por defecto para actividad sin imagen destacada
 
 # PAGINAS LEGALES
-- [] Aviso legal
-- [] Politica de privaciad
-- [] Politica de cookies
+- [X] Aviso legal
+- [X] Politica de privaciad
+- [X] Politica de cookies
 
 
 # ENTRADAS single.php
@@ -26,6 +32,8 @@
 - [X] Ubicar categorias
 - [X] Ubicar etiqeutas
 - [X] Estilo responsive
+- [ ] Añadir fecha de edición
+- [ ] Añadir opcion para mostrar la imagen destacada o no, y aproverchar todo el ancho
 
 # LISTA ENTRADAS archive.php
 - [X] Estilo
@@ -35,6 +43,8 @@
 
 # 404
 - [X] Crear página 404
+- [X] Añadir caja de buscador
+- [ ] Añadir enlace a últimas actividaes
 
 # footer.php
 - widget de rrss

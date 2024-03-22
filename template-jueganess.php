@@ -36,18 +36,14 @@ include_once OML_THEME_PATH.'/includes/actividades.php'; ?>
         <p class="masthead-subheading font-weight-light mb-0">Asociación Cultural de Leganés</p>
 
       </div>
-
-      <?php 
-      // La actividad destacada, por defecto, SIEMPRE será la última que se cree
-      // la questa en la posición 0
+    
       
-      $rutaImagenes = JGN_THEME_URL . '/img/actividades/';
-      $actividades = get_actividades(); 
-      $act = $actividades[0]; ?>
       <div class="container d-flex align-items-center flex-column">
         <?php 
-        $imagenCartel = $rutaImagenes . $act['cartel'];
-        $imagenAlt =  $act['alt_cartel']; ?>
+        $rutaImagenes = JGN_THEME_URL . '/img/actividades/'; 
+      
+        $imagenCartel = $rutaImagenes . 'cartel-provisional-iii-jornadas-juegannes-2024.jpg';
+        $imagenAlt =  'Cartel III jornadas jueganes 2024'; ?>
         
         <img class="img-fluid" src="<?php echo $imagenCartel; ?>" alt="<?php echo $imagenAlt; ?>" >
         
@@ -102,21 +98,10 @@ include_once OML_THEME_PATH.'/includes/actividades.php'; ?>
   <!-- Actividades Section -->
   <?php 
   do_action('oml_section_actividades'); ?>
-  <section class="page-section portfolio bg-primary " id="actividades">
+
+
+  <section class="page-section portfolio bg-primary ">
     <div class="container">
-
-      <!-- Actividades Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white mb-0"><?php _e('Actividades', 'jueganess'); ?></h2>
-      
-      <?php
-      do_action('oml_show_separator', array('divider-light') ); ?>
-      
-
-  
-      <!-- Actividades Grid Items -->
-      <?php
-      mostrar_actividades(); ?>
-      
 
       <div class="row">
         <div class="col-lg-12 mx-auto">
@@ -293,12 +278,6 @@ include_once OML_THEME_PATH.'/includes/actividades.php'; ?>
 
     </div>
   </section> 
-
-  
-
-  <!-- Portfolio Modals -->
-  <?php 
-  generar_popups_actividades(); ?>
 
 
 <?php 
