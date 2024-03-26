@@ -2,10 +2,28 @@
 Conversión de la web estática jueganes.org a un tema Wordpress
 
 
-![Logo Asociación Cultural Jueganess](/logo-jueganess-512.png)
+![Logo Asociación Cultural Jueganess](/assets/images/logo-jueganess-512-fondo-blanco.png)
+
+
+ACTUALIZACION DEL TEMA
+---------------------
+En wp-config.php, añadir 
+
+> define('OMNISLUDO_GITHUB_URI', 'https://api.github.com/repos/pisanowp/omnisludo/releases');
+> define('OMNISLUDO_GITHUB_TOKEN', 'ghp_999999999999999999');
+
+
+OMNISLUDO_GITHUB_URI, es el url dondes se encuentra las versiones del tema
+OMNISLUDO_GITHUB_TOKEN, es la clave de acceso privada al repositorio
+Si el reposotirorio es púbico, entonces definimos el token de acceso como:
+> define('OMNISLUDO_GITHUB_TOKEN', false);
+
 
 
 ## VERSIONES
+v0.4.0
+- feat: Deshabilitar RESTAPI
+- feat: Código UPDATER
 
 v0.3.5
 - feat: search form
