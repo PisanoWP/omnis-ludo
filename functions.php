@@ -2,7 +2,7 @@
 
 define('OML_THEME_PATH', get_template_directory() );
 define('OML_THEME_URL', get_template_directory_uri() );
-define('OML_THEME_VERSION', '0.3.5' );
+define('OML_THEME_VERSION', '0.4.0' );
 
 define('JGN_THEME_URL', get_template_directory_uri() );
 
@@ -42,6 +42,8 @@ function omlwp_setup(){
   );
 
 	add_editor_style();
+
+	omnisludowp_check_update();
 
 }
 add_action( 'after_setup_theme', 'omlwp_setup');
@@ -222,51 +224,46 @@ add_action( 'widgets_init', 'omlwp_register_sidebars' );
 
 
 
-
-
-
-
-
-
-if ( ! function_exists( 'twenty_twenty_one_post_thumbnail' ) ) {
-	/**
-	 * Displays an optional post thumbnail.
-	 *
-	 * Wraps the post thumbnail in an anchor element on index views, or a div
-	 * element when on single views.
-	 *
-	 * @since Twenty Twenty-One 1.0
-	 *
-	 * @return void
-	 */
-	function twenty_twenty_one_post_thumbnail() {
-		
-		?>
-
-		<?php if ( is_singular() ) : ?>
-
-			<figure class="post-thumbnail">
-				<?php
-				// Lazy-loading attributes should be skipped for thumbnails since they are immediately in the viewport.
-				the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
-				?>
-				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
-					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
-				<?php endif; ?>
-			</figure><!-- .post-thumbnail -->
-
-		<?php else : ?>
-
-			<figure class="post-thumbnail">
-				<a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail( 'post-thumbnail' ); ?>
-				</a>
-				<?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
-					<figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
-				<?php endif; ?>
-			</figure><!-- .post-thumbnail -->
-
-		<?php endif; ?>
-		<?php
+// Deshabilitamos el api
+add_filter( 'rest_authentication_errors', function( $result ) {
+	if ( ! empty( $result ) ) {
+			return $result;
 	}
-}
+	if ( ! is_user_logged_in() ) {
+			return new WP_Error( 'rest_not_logged_in', 'No has iniciado sesión.', array( 'status' => 401 ) );
+	}
+	return $result;
+});
+
+
+
+/*
+*
+* CÓDIGO PARA COMPROBAR ACTUALIZACIONES
+*
+*/
+require_once 'includes/class-omnisludowp-updater.php';
+
+// Comprobamos si hay versiones nuevas del tema
+function omnisludowp_check_update() {
+	if ( is_admin() ) {
+		
+		$github_uri 	= false;
+		$github_token = false;
+
+		if ( defined( 'OMNISLUDO_GITHUB_URI' ) )
+			$github_uri = OMNISLUDO_GITHUB_URI;
+
+		if ( defined( 'OMNISLUDO_GITHUB_TOKEN' ) )
+			$github_token = OMNISLUDO_GITHUB_TOKEN;
+
+		$theme_name = basename( dirname(__FILE__) ) ;
+		$config  = array(			                 
+			'github_uri' => $github_uri,
+			'token'      => $github_token 
+		);
+		$updater = new OMNISLUDOWP_Updater( $theme_name, $config);
+		$updater->check_update();		
+    
+	}
+} // omnisludowp_check_update
